@@ -12,7 +12,7 @@ app.config['MONGODB_SETTINGS'] = {
     'db': 'FlaskProject',
     'host': 'mongodb',
     'port': 27017,
-    'user': 'admin',
+    'username': 'admin',
     'password':'admin'
 }
 
