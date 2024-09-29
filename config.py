@@ -10,6 +10,25 @@ class DevConfig:
         'password':os.getenv('MONGODB_PASSWORD')
     }
 
+
+class  ProdConfig:
+
+    MONGODB_USER = os.getenv('MONGODB_USER')
+    MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+    MONGODB_HOST = os.getenv('MONGODB_HOST')
+    MONGODB_DB = os.getenv('MONGO_USER')
+       
+    MONGODB_SETTINGS = {
+        'db': 'FlaskProject',
+        'host': 'mongodb+srv://%s:%s@%s/%s?retryWrites=true&w=majority&appName=restapi-flask' %(
+            MONGODB_USER,
+            MONGODB_PASSWORD,
+            MONGODB_HOST,
+            MONGODB_DB
+        ),
+    }
+
+
 class MockConfig:
       
     MONGODB_SETTINGS = {
