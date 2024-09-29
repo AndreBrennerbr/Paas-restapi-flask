@@ -4,8 +4,6 @@ from .model import UserModel
 import re
 from mongoengine import NotUniqueError
 
-
-
 user_parser = reqparse.RequestParser()
 
 user_parser.add_argument('first_name',
@@ -37,13 +35,6 @@ user_parser.add_argument('birth_date',
                          required=True,
                          help='This field cannot be blank'
                         )
-
-
-
-
-
-
-
 
 class Users(Resource):
     def get(self):
@@ -94,12 +85,18 @@ class User(Resource):
 
 
 
-    
+
     def get(self,cpf):
         response = UserModel.objects(cpf = cpf)
-        
+
         if not response:
             return {"message":"Usuário não cadastrado"},400
 
         return jsonify(response)
-  
+
+
+
+
+
+
+
